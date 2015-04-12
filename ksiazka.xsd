@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+<xsd:element name="ksiazka">
+<xsd:complexType>
+<xsd:sequence>
+	<xsd:element ref="kontakt" minOccurs="1" maxOccurs="unbounded"/>
+	<xsd:element ref="grupa" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+
+
+<xsd:key name="kluczGrupa">
+	<xsd:selector xpath="grupa"/>
+	<xsd:field xpath="@id"/>
+</xsd:key>
+
+
+
+
+<xsd:keyref name="idGrupa" refer="kluczGrupa">
+	<xsd:selector xpath="kontakt"/>
+	<xsd:field xpath="@id_grupa"/>
+</xsd:keyref>
+
+</xsd:element>
+
+
+
+
+
+
+
+<xsd:complexType name="typGrupy">
+	<xsd:simpleContent>
+		<xsd:extension base="nazwaGrupy">
+			<xsd:attribute name="id" type="xsd:token" use="required"/>
+		</xsd:extension>
+	</xsd:simpleContent>
+</xsd:complexType>
+
+
+
+<xsd:simpleType name="nazwaGrupy">
+	<xsd:restriction base="xsd:string">
+		<xsd:maxLength value="10"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+
+
+
+
+
+
+
+
+<xsd:element name="dane_personalne">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="tytul" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="imie" type="imie_Typ"/>
+			<xsd:element name="nazwisko" type="nazwisko_Typ"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+
+
+<xsd:simpleType name="imie_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="([A-Z]([a-z]*))"/>
+		<xsd:maxLength value="30"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+<xsd:simpleType name="nazwisko_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="([A-Z][a-z]*)((\-([A-Z][a-z]*)){0,1})"/>
+		<xsd:maxLength value="30"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+
+
+
+
+
+
+
+
+
+<xsd:element name="adres">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="kod_pocztowy" type="kod_pocztowy_Typ"/>
+			<xsd:element name="miejscowosc" type="xsd:string"/>
+			<xsd:element name="ulica" type="xsd:string"/>
+			<xsd:element name="nr_budynku" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="nr_lokalu" type="xsd:integer" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="rodzaj" type="xsd:string"/>
+	</xsd:complexType>
+</xsd:element>
+
+
+<xsd:simpleType name="kod_pocztowy_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[0-9][0-9]-[0-9][0-9][0-9]"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+
+
+
+
+
+
+
+
+<xsd:element name="dane_kontaktowe">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="tel" type="tel_Typ"/>
+			<xsd:element name="email" type="email_Typ"/>
+			<xsd:element name="gg" type="gg_Typ" minOccurs="0"/>
+			<xsd:element ref="status"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+
+
+<xsd:simpleType name="tel_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="((\+[0-9][0-9]){0,1})([0-9]){9}"/>
+		<xsd:minLength value="9"/>
+		<xsd:maxLength value="12"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+<xsd:complexType name="email_Typ">
+	<xsd:simpleContent>
+		<xsd:extension base="email_nazwa">
+		<xsd:attribute name="domena" type="xsd:string"/>
+	</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+
+
+
+<xsd:simpleType name="email_nazwa">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[0-9a-zA-Z]*@[0-9a-zA-Z]*(\.)[\.0-9a-zA-Z]*"/>
+		<xsd:maxLength value="30"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+<xsd:simpleType name="gg_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[0-9]*"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+
+<xsd:complexType name="status_Typ">
+			<xsd:attribute name="tekst" type="xsd:string" use="required"/>
+</xsd:complexType>
+
+<xsd:element name="status" type="status_Typ"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<xsd:simpleType name="brak">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="brak"/>
+	</xsd:restriction>
+</xsd:simpleType>
+	
+<xsd:simpleType name="terminy">
+	<xsd:list itemType="xsd:date"/>
+</xsd:simpleType>
+	
+<xsd:simpleType name="daty_Typ">
+	<xsd:union memberTypes="terminy brak"/>
+</xsd:simpleType>
+
+
+<xsd:element name="daty" type="daty_Typ"/>
+
+
+
+<xsd:simpleType name="domowa_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="(http://){1}([A-Za-z0-9]\.*)*"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+
+<xsd:element name="strDom" type="domowa_Typ"/>
+
+
+
+
+
+
+<xsd:element name="kontakt">
+<xsd:complexType>
+	<xsd:sequence>
+		<xsd:element ref="dane_personalne"/>
+		<xsd:element ref="adres" minOccurs="1" maxOccurs="2"/>
+		<xsd:element ref="dane_kontaktowe"/>
+		<xsd:element ref="daty"/>
+		<xsd:element ref="strDom"/>
+	</xsd:sequence>
+	<xsd:attribute name="plec" use="required" type="plec_Typ"/>
+	<xsd:attribute name="id_grupa" use="required" type="xsd:string"/>
+</xsd:complexType>
+</xsd:element>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<xsd:element name="grupa" type="typGrupy" />
+
+<xsd:simpleType name="plec_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="m"/>
+		<xsd:enumeration value="k"/>
+		<xsd:enumeration value="brak"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+</xsd:schema>
