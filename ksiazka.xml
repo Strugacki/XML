@@ -171,7 +171,7 @@
 
 	<kontakt plec="k" id_grupa="z">
 		<dane_personalne>
-			<tytul>&dr;</tytul>
+			<tytul>doktor</tytul>
 			<imie>Anna</imie>
 			<nazwisko>Sorbian</nazwisko>
 		</dane_personalne>
@@ -199,7 +199,7 @@
 
 	<kontakt plec="m" id_grupa="z">
 		<dane_personalne>
-			<tytul>&dr;</tytul>
+			<tytul>doktor</tytul>
 			<imie>Jaroslaw</imie>
 			<nazwisko>Marcinkiewicz</nazwisko>
 		</dane_personalne>

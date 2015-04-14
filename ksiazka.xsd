@@ -32,8 +32,6 @@
 
 
 
-
-
 <xsd:complexType name="typGrupy">
 	<xsd:simpleContent>
 		<xsd:extension base="nazwaGrupy">
@@ -63,7 +61,9 @@
 <xsd:element name="dane_personalne">
 	<xsd:complexType>
 		<xsd:sequence>
+			<xsd:choice>
 			<xsd:element name="tytul" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			</xsd:choice>
 			<xsd:element name="imie" type="imie_Typ"/>
 			<xsd:element name="nazwisko" type="nazwisko_Typ"/>
 		</xsd:sequence>
@@ -101,13 +101,13 @@
 
 <xsd:element name="adres">
 	<xsd:complexType>
-		<xsd:sequence>
+		<xsd:all>
 			<xsd:element name="kod_pocztowy" type="kod_pocztowy_Typ"/>
 			<xsd:element name="miejscowosc" type="xsd:string"/>
 			<xsd:element name="ulica" type="xsd:string"/>
 			<xsd:element name="nr_budynku" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="nr_lokalu" type="xsd:integer" minOccurs="0" maxOccurs="1"/>
-		</xsd:sequence>
+		</xsd:all>
 		<xsd:attribute name="rodzaj" type="xsd:string"/>
 	</xsd:complexType>
 </xsd:element>
@@ -132,9 +132,11 @@
 <xsd:element name="dane_kontaktowe">
 	<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element name="tel" type="tel_Typ"/>
-			<xsd:element name="email" type="email_Typ"/>
+			<xsd:element name="tel" type="tel_Typ" minOccurs="0" maxOccurs="3"/>
+			<xsd:element name="email" type="email_Typ" minOccurs="0" maxOccurs="5"/>
+			<xsd:choice>
 			<xsd:element name="gg" type="gg_Typ" minOccurs="0"/>
+			</xsd:choice>
 			<xsd:element ref="status"/>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -221,13 +223,19 @@
 
 
 
+
+
+
+
+
+
+
+
 <xsd:simpleType name="domowa_Typ">
 	<xsd:restriction base="xsd:string">
 		<xsd:pattern value="(http://){1}([A-Za-z0-9]\.*)*"/>
 	</xsd:restriction>
 </xsd:simpleType>
-
-
 
 
 <xsd:element name="strDom" type="domowa_Typ"/>
@@ -247,12 +255,17 @@
 		<xsd:element ref="strDom"/>
 	</xsd:sequence>
 	<xsd:attribute name="plec" use="required" type="plec_Typ"/>
-	<xsd:attribute name="id_grupa" use="required" type="xsd:string"/>
+	<xsd:attribute name="id_grupa" use="required" type="id_grupa_Typ"/>
 </xsd:complexType>
 </xsd:element>
 
 
-
+<xsd:simpleType name="id_grupa_Typ">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="(([a-zA-Z]){1})([0-9a-zA-Z]*)"/>
+		<xsd:maxLength value="30"/>
+	</xsd:restriction>
+</xsd:simpleType>
 
 
 
