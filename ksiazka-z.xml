@@ -15,7 +15,7 @@
 			<nazwisko>Hallman</nazwisko>
 		</dane_personalne>
 		<adres rodzaj="http://mhallman.sigma.edu.pl/xmlns/dom">
-			<kod_pocztowy>83-262</kod_pocztowy>
+			<kod_pocztowy>262</kod_pocztowy>
 			<miejscowosc>Czarna Woda</miejscowosc>
 			<ulica>Okrezna</ulica>
 			<nr_budynku>14</nr_budynku>
@@ -27,10 +27,10 @@
 			<status tekst="jestem offline"/>
 		</dane_kontaktowe>
 		<daty>2012-04-13 2012-05-23</daty>
-		<strDom>http://leszek.pl</strDom>
+		<strDom>leszek.pl</strDom>
 	</kontakt>
 
-	<kontakt plec="k" id_grupa="r">
+	<kontakt plec="blad" id_grupa="blad">
 		<dane_personalne>
 			<imie>Janina</imie>
 			<nazwisko>Hallman</nazwisko>
@@ -156,7 +156,7 @@
 		</adres>
 		<dane_kontaktowe>
 			<tel>396186386</tel>
-			<email domena="stom-rodzina">recepcja@stomrodzinna.pl</email>
+			<email domena="stom-rodzina">recepcjastomrodzinna.pl</email>
 			<status tekst="jestem offline"/>
 		</dane_kontaktowe>
 		<daty>brak</daty>
