@@ -1,0 +1,476 @@
+/*KSIAŻKA*/
+ksiazka{
+	background-color: #85F285;
+	counter-reset: rodzina;
+	counter-reset: bliscy;
+	counter-reset: zdrowie;
+	counter-reset: praca;
+}
+
+
+/*KONTAKT*/
+kontakt{
+	background-color: #9FC5F2;
+	margin:auto;
+	margin-top:20px;
+	border-radius: 5px 5px;
+	display:block;
+	width:500px;
+	height:50%;
+	cursor: pointer;
+}
+
+kontakt:before{
+	color: black;
+	display: block;
+	width: 130px;
+	height: 30px;
+	margin-top: 5px;
+	margin-left: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: courier new;
+	text-shadow: 1px 1px 1px white;
+}
+
+
+kontakt[id_grupa="r"]{
+	counter-increment: rodzina;
+	border: 3px dotted black;
+}
+
+
+kontakt[id_grupa="r"]:before{
+	content: "Rodzina: " counter(rodzina) " ";
+}
+
+
+kontakt[id_grupa="b"]{
+	counter-increment: bliscy;
+	border: 2px solid #000000;
+	-webkit-box-shadow: 3px 3px 7px white;
+	-moz-box-shadow: 3px 3px 7px white;
+	box-shadow: 3px 3px 7px white;
+}
+
+kontakt[id_grupa="b"]:before{
+	content: "Bliscy: " counter(bliscy) " ";
+}
+
+kontakt[id_grupa="p"]{
+	counter-increment: praca;
+	border: 4px solid #F6901E;
+}
+
+kontakt[id_grupa="p"]:before{
+	content: "Praca: " counter(praca) " ";
+}
+
+kontakt[id_grupa="z"]{
+	counter-increment: zdrowie;
+	border: 3px dashed black;
+}
+
+kontakt[id_grupa="z"]:before{
+	content: "Zdrowie: " counter(zdrowie) " ";
+}
+
+
+
+kontakt[id_grupa="b"][plec="m"]{
+	background-image: url("../images/friends.jpg"),url("../images/male.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+kontakt[id_grupa="b"][plec="k"]{
+	background-image: url("../images/friends.jpg"),url("../images/female.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+kontakt[id_grupa="r"][plec="k"]{
+	background-image: url("../images/family.png"),url("../images/female.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+kontakt[id_grupa="r"][plec="m"]{
+	background-image: url("../images/family.png"),url("../images/male.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+kontakt[id_grupa="z"][plec="k"]{
+	background-image: url("../images/health.png"),url("../images/female.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+kontakt[id_grupa="z"][plec="m"]{
+	background-image: url("../images/health.png"),url("../images/male.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+kontakt[id_grupa="p"][plec="k"]{
+	background-image: url("../images/work.png"),url("../images/female.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+kontakt[id_grupa="p"][plec="m"]{
+	background-image: url("../images/work.png"),url("../images/male.png"); 
+	background-position:400px 120px,380px 10px;
+	background-size: 50px 50px,100px 100px;
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+/*DANE PERSONALNE*/
+dane_personalne{
+	position: relative;
+	margin: 10px 0px 10px 20px;
+	width: 380px;
+	padding: 5px;
+	display:block;
+	clear:both;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: cursive;
+	color:white;
+	text-shadow: 1px 1px 2px black;
+	text-decoration: underline;
+	-webkit-animation-name: dane_ikona; 
+    -webkit-animation-duration: 4s; 
+    animation-name: dane_ikona;
+    animation-duration: 4s;
+
+}
+
+dane_personalne:hover{
+	-webkit-animation-name: podskok;
+	-webkit-animation-duration: 1s;
+	animation-name: podskok;
+	animation-duration: 1s;
+}
+
+
+@-webkit-keyframes dane_ikona {
+    0%   {left:0px; top:0px;}
+    25%  {left:50px; top:20px;}
+    50%  {left:50px; top:0px;}
+    75%  {left:0px; top:20px;}
+    100% {left:0px; top:0px;}
+}
+
+
+@-webkit-keyframes podskok {
+    0% {
+      top: 0;
+      animation-timing-function: ease-out;
+    }
+    17% {
+      top: 15px;
+      animation-timing-function: ease-in;
+    }
+    34% {
+      top: 0;
+      animation-timing-function: ease-out;
+    }
+    51% {
+      top: 8px;
+      animation-timing-function: ease-in;
+    }
+    68% {
+      top: 0px;
+      animation-timing-function: ease-out;
+    }
+    85% {
+      top: 3px;
+      animation-timing-function: ease-in;
+    }
+    100% {
+      top: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*ADRES*/
+adres{
+	margin: 10px auto;
+	width: 400px;
+	padding: 5px;
+	display: block;
+	clear: both
+}
+
+
+kod_pocztowy{
+	margin-top: 5px;
+	display: list-item;
+	list-style: none;
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+miejscowosc{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: list-item;
+	list-style: none;
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+ulica{
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+nr_budynku{
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+nr_lokalu{
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+kod_pocztowy:before{
+	content: "Kod pocztowy: ";
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}
+
+miejscowosc:before{
+	content: "Miejscowosc: ";
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}
+
+ulica:before{
+	content: "Ulica: ";
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}
+
+
+
+nr_lokalu:before{
+	content: "/ ";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DANE KONTAKTOWE*/
+kontakt[id_grupa="r"]{
+	background-color: #75C5F2;
+}
+
+kontakt[id_grupa="b"]{
+	background-color: #9FC5F2;
+}
+
+kontakt[id_grupa="z"]{
+	background-color: #74D1F2;
+}
+
+kontakt[id_grupa="p"]{
+	background-color: #497C99;
+}
+
+
+dane_kontaktowe{
+	background-image: url("../images/contactt.png");
+	background-repeat: no-repeat;
+	background-size: 100px 104px;
+	margin: 10px auto;
+	width: 100px;
+	height: 104px;
+	padding: 5px;
+	display: block!important;
+	clear:both;
+}
+
+dane_kontaktowe:hover{
+	-webkit-transition: 0.5s ease-in;
+	-moz-transition: 0.5s ease-in;
+	transition: 0.5s ease-in;
+	background-image: none;
+	margin: 10px auto;
+	width: 300px;
+	height: 104px;
+	padding: 5px;
+	display: block!important;
+	clear:both;
+}
+
+
+grupa{
+	display: none;
+}
+
+
+tel:before{
+	content: "Tel: " ;
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}	
+
+email:before{
+	content: "Email: " ;	
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}
+
+gg:before{
+	content: "gg: ";
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}
+
+
+tel,email,gg{
+	display: none;
+}
+
+dane_kontaktowe:hover > tel{
+	width:400px;
+	height: 30px;
+	display:list-item;
+	list-style: none;
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+dane_kontaktowe:hover > email{
+	width:400px;
+	height: 30px;
+	display: list-item;
+	list-style: none;
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+dane_kontaktowe:hover > gg{
+	width:400px;
+	height: 30px;
+	display: list-item;
+	list-style: none;
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+}
+
+daty:before{
+	content: "SPOTKANIA: ";
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}
+daty{
+	display: block;
+	width:400px;
+	height:20px;
+	margin:auto;
+	margin-bottom: 20px;
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+	clear: both;
+}
+
+
+strDom:before{
+	content: "Strona Domowa: ";
+	font-weight: bold;
+	font-size: 19px;
+	font-family: cursive;
+	text-shadow: none;
+	color: black;
+}
+
+
+strDom{
+	display: block;
+	width:400px;
+	height:40px;
+	margin:auto;
+	margin-bottom: 20px;
+	text-shadow: 1px 1px 3px black;
+	font-size: 18px;
+	font-family: cursive;
+	color: #F6901E;
+	clear: both;
+}
+
+
+

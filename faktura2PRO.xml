@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<main>
+<faktura>
+	<produkty>
+	<produkt>
+		<nazwa>Zegarek</nazwa>
+		<kod>5324663162</kod>
+		<cena waluta="euro">57.54</cena>
+		<ilosc>20</ilosc>
+	</produkt>
+	<produkt>
+		<nazwa>Buty</nazwa>
+		<kod>1421345</kod>
+		<cena waluta="zl">240.45</cena>
+		<ilosc>13</ilosc>
+	</produkt>
+	</produkty>
+
+		<sklep>
+			<nazwa>SforneGacie</nazwa>
+			<adres>Las Vegas</adres>
+			<kodp>44-777</kodp>
+			<telefon>567832154</telefon>
+			<nip>1023456-56</nip>
+		</sklep>
+
+	<dostawca>
+		<nazwa>JacekPlacek</nazwa>
+		<adres>
+			<ulica>Okraglego stolu</ulica>
+			<kod>77-365</kod>
+			<miasto>Sopot</miasto>
+		</adres>
+		<telefony>
+			<telefon-kom>123456789</telefon-kom>
+		</telefony>
+	</dostawca>
+	
+	<odbiorca>
+		<nazwa>MirekPol</nazwa>
+		<adres>
+			<ulica>Okrezna</ulica>
+			<kod>83-262</kod>
+			<miasto>Czarna Woda</miasto>
+		</adres>
+		<telefony>
+			<telefon-stac>782694466</telefon-stac>
+		</telefony>
+	</odbiorca>
+</faktura>
+
+<paragon>
+	<produkty>
+		<produkt>
+			<nazwa>PC</nazwa>
+			<kod>A1B2D</kod>
+			<cena waluta="zl">19.99</cena>
+			<ilosc>15</ilosc>	
+		</produkt>
+	</produkty>
+	<sklep>
+			<nazwa>SforneGacie</nazwa>
+			<adres>Las Vegas</adres>
+			<kodp>44-777</kodp>
+			<telefon>567832154</telefon>
+			<nip>1023456-56</nip>
+	</sklep>
+</paragon>
+
+
+<fakturaPRO>
+	<produkty>
+		<produkt>
+		<nazwa>Zegarek</nazwa>
+		<kod>5324663162</kod>
+		<cena waluta="euro">57.54</cena>
+		<ilosc>20</ilosc>
+	</produkt>
+	
+	</produkty>
+
+
+		<sklep>
+			<nazwa>SforneGacie</nazwa>
+			<adres>Las Vegas</adres>
+			<kodp>44-777</kodp>
+			<telefon>567832154</telefon>
+			<nip>1023456-56</nip>
+		</sklep>
+	
+	
+	<dostawca>
+		<nazwa>JacekPlacek</nazwa>
+		<adres>
+			<ulica>Okraglego stolu</ulica>
+			<kod>77-365</kod>
+			<miasto>Sopot</miasto>
+		</adres>
+		<telefony>
+			<telefon-kom>123456789</telefon-kom>
+		</telefony>
+	</dostawca>
+	
+	<odbiorca>
+		<nazwa>MirekPol</nazwa>
+		<adres>
+			<ulica>Okrezna</ulica>
+			<kod>83-262</kod>
+			<miasto>Czarna Woda</miasto>
+		</adres>
+		<telefony>
+			<telefon-stac>782694466</telefon-stac>
+		</telefony>
+	</odbiorca>
+	
+	<witrynaSklepu>robrzeczy.pl</witrynaSklepu>
+	
+	
+</fakturaPRO>
+
+</main>

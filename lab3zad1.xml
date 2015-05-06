@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uczelnia SYSTEM "lab3dtd2.dtd">
+
+
+<uczelnia>
+
+	<nazwa>Gwiezdna Flota</nazwa>
+	<rektor>
+		<tytul>Re</tytul>
+		<imie>Sebastiaktorn</imie>
+		<nazwisko>Bak</nazwisko>
+	</rektor>
+	<prorektor>
+		<tytul>Prorektor</tytul>
+		<imie>Mateo</imie>
+		<nazwisko>Makao</nazwisko>
+	</prorektor>
+	
+	<prorektor>
+		<tytul>Prorektor</tytul>
+		<imie>Alvaro</imie>
+		<nazwisko>Armando</nazwisko>
+	</prorektor>
+	
+	<wydzial>
+		<nazwa>Lopatologia</nazwa>
+		<dziekan>
+			<imie>Mieczyslaw</imie>
+			<nazwisko>Miecz</nazwisko>
+			<tytul>Dziekan</tytul>
+		</dziekan>
+		<instytut>
+			<nazwa>Roboty Reczne</nazwa>
+			<dyrektor>
+				<tytul>Dyrektor</tytul>
+				<imie>Tytus</imie>
+				<nazwisko>Bomba</nazwisko>
+			</dyrektor>
+		</instytut>
+		<instytut>
+			<nazwa>Operacje Wakacje</nazwa>
+			<dyrektor>
+				<tytul>Szefuncio</tytul>
+				<imie>Pawel</imie>
+				<nazwisko>Landryn</nazwisko>
+			</dyrektor>
+		</instytut>
+		<kierunek>
+			<nazwa>Szpadologia</nazwa>
+			<kurs>
+				<nazwa>kurs</nazwa>
+				<opis>OPIS</opis>
+				<forma>FORMA</forma>
+				<limit>1000000</limit>
+			</kurs>
+		</kierunek>
+	</wydzial>
+	
+	<wydzial>
+		<nazwa>Lopatologia</nazwa>
+		<dziekan>
+			<imie>Mieczyslaw</imie>
+			<nazwisko>Miecz</nazwisko>
+			<tytul>Dziekan</tytul>
+		</dziekan>
+		<instytut>
+			<nazwa>Roboty Reczne</nazwa>
+			<dyrektor>
+				<tytul>Dyrektor</tytul>
+				<imie>Tytus</imie>
+				<nazwisko>Bomba</nazwisko>
+			</dyrektor>
+		</instytut>
+		<instytut>
+			<nazwa>Operacje Wakacje</nazwa>
+			<dyrektor>
+				<tytul>Szefuncio</tytul>
+				<imie>Pawel</imie>
+				<nazwisko>Landryn</nazwisko>
+			</dyrektor>
+		</instytut>
+		<kierunek>
+			<nazwa>Szpadologia</nazwa>
+			<kurs>
+				<nazwa>kurs</nazwa>
+				<opis>OPIS</opis>
+				<forma>FORMA</forma>
+				<limit>1000000</limit>
+			</kurs>
+		</kierunek>
+	</wydzial>
+	
+	<katedra>
+		<nazwa>NAZWA KATEDRY</nazwa>
+		<dyrektor>
+			<tytul>Kardynal</tytul>
+			<imie>Ojciec</imie>
+			<nazwisko>Rydzyk</nazwisko>
+		</dyrektor>
+	</katedra>
+	<biblioteka>Biblioteka</biblioteka>
+</uczelnia>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+	<xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+  <html> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title></title> 
+    </head> 
+  <body>
+  <h2>Zwierzaki lab10</h2>
+	
+
+<ol>
+      <xsl:for-each select="zwierzaki/zwierze">
+<li>
+	  <xsl:if test="@plec='k'">
+	  <span style="color:red; text-decoration: underline"><xsl:value-of select="imie"/>  <xsl:text>  </xsl:text>   </span>
+      </xsl:if>
+    
+    
+      <xsl:if test="@plec='m'">
+	  <span style="color:blue; text-decoration: underline"><xsl:value-of select="imie"/> <xsl:text>  </xsl:text>  </span>    
+        
+</xsl:if>
+		  
+	
+<strong>  <xsl:value-of select="gatunek"/></strong>
+</li>		
+      </xsl:for-each>
+</ol>
+  </body>
+  </html>
+</xsl:template>
+</xsl:stylesheet>

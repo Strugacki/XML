@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE osoba [
+<!ELEMENT uczelnia   (nazwa, rektor, prorektor, prorektor, 
+                      wydzial, wydzial+, katedra*,biblioteka?)>
+                      
+<!ENTITY prof "profesor">
+<!ENTITY mgr "magister">
+<!ENTITY hab "habilitowany">
+<!ENTITY inz "inżynier">
+<!ENTITY dr "doktor">
+<!ENTITY nadzw "nadzwyczajny">
+
+<!ELEMENT nazwa      (#PCDATA)>
+<!ELEMENT rektor     (imie, nazwisko, tytul)>
+<!ELEMENT prorektor  (imie, nazwisko, tytul)>
+<!ELEMENT imie       (#PCDATA)>
+<!ELEMENT nazwisko   (#PCDATA)>
+<!ELEMENT tytul      (#PCDATA)>
+<!ELEMENT wydzial    (nazwa, dziekan, prodziekan*, instytut+, kierunek+)>
+<!ELEMENT dziekan    (imie, nazwisko, tytul)>
+<!ELEMENT prodziekan (imie, nazwisko, tytul)>
+<!ELEMENT instytut   (nazwa, szef)>
+<!ELEMENT szef       (imie, nazwisko, tytul)>
+<!ELEMENT kierunek   (nazwa, kurs+)>
+<!ELEMENT kurs       (nazwa, opis, forma+)>
+<!ELEMENT opis       (#PCDATA)>
+<!ELEMENT forma      (#PCDATA)>
+<!ELEMENT katedra    (nazwa, szef)>
+<!ELEMENT biblioteka (#PCDATA)>
+]>
+
+<uczelnia>
+  <nazwa>Politechnika Wrocławska</nazwa>
+  <rektor>
+    <imie>Andrzej</imie>
+    <nazwisko>Mulak</nazwisko>
+    <tytul>&prof; &dr; &hab; &inz; </tytul>
+ </rektor>
+  <prorektor>
+    <imie>Jerzy</imie>
+    <nazwisko>Zdanowski</nazwisko>
+    <tytul>&prof; &dr; &hab; &inz;</tytul>
+ </prorektor>
+  <prorektor>
+    <imie>Jerzy</imie>
+    <nazwisko>Świątek</nazwisko>
+    <tytul>&dr; &hab; &inz; &prof; &nadzw;</tytul>
+ </prorektor>
+
+  <wydzial>
+    <nazwa>Informatyki i Zarządzania</nazwa>
+    <dziekan>
+      <imie>Tadeusz</imie>
+      <nazwisko>Galanc</nazwisko>
+      <tytul>&prof; &dr; &hab;</tytul>
+   </dziekan>
+    <prodziekan>
+      <imie>Zygmunt</imie>
+      <nazwisko>Mazur</nazwisko>
+      <tytul>&dr; &hab; &prof; &nadzw;</tytul>
+   </prodziekan>
+    <prodziekan>
+      <imie>Marian</imie>
+      <nazwisko>Molasy</nazwisko>
+      <tytul>&dr; &inz;</tytul>
+   </prodziekan>
+    <instytut>
+      <nazwa>Instytut Organizacji i Zarządzania</nazwa>
+      <szef>
+        <imie>Janusz</imie>
+        <nazwisko>Kroik</nazwisko>
+        <tytul>&dr; &inz;</tytul>
+     </szef>
+   </instytut>
+    <instytut>
+      <nazwa>Instytut Sterowania i Techniki Systemów</nazwa>
+      <szef>
+        <imie>Adam</imie>
+        <nazwisko>Grzech</nazwisko>
+        <tytul>&dr; &hab; &inz; &prof; &nadzw;</tytul>
+     </szef>
+   </instytut>
+
+    <kierunek>
+      <nazwa>Informatyka</nazwa>
+      <kurs>
+        <nazwa>Algorytmy i struktury danych</nazwa>
+        <opis>Podstawowe algorytmy oraz statyczne i dynamiczne struktury danych wykorzystywanych w informatyce
+       </opis>
+        <forma>wykład</forma>
+        <forma>ćwiczenia</forma>
+        <forma>laboratorium</forma>
+     </kurs>
+      <kurs>
+        <nazwa>Wstęp do programowania</nazwa>
+        <opis>Podstawy programowania na przykładzie języka pascal</opis>
+        <forma>wykład</forma>
+        <forma>ćwiczenia</forma>
+        <forma>laboratorium</forma>
+     </kurs>
+
+          <!-- pozostałe kursy -->
+   </kierunek>
+        <!-- pozostałe kierunki -->
+ </wydzial>
+
+  <wydzial>
+    <nazwa>Mechaniczny</nazwa>
+    <dziekan>
+      <imie>Jan</imie>
+      <nazwisko>Koch</nazwisko>
+      <tytul>&prof; &dr; &hab; &inz;</tytul>
+   </dziekan>
+    <prodziekan>
+      <imie>Jerzy</imie>
+      <nazwisko>Bochman</nazwisko>
+      <tytul>&dr; &inz;</tytul>
+   </prodziekan>
+    <prodziekan>
+      <imie>Jan</imie>
+      <nazwisko>Wojciechowski</nazwisko>
+      <tytul>&dr; &hab; &inz;</tytul>
+   </prodziekan>
+    <instytut>
+      <nazwa>Instytut Konstrukcji i Eksploatacji Maszyn</nazwa>
+      <szef>
+        <imie>Wacław</imie>
+        <nazwisko>Kollek</nazwisko>
+        <tytul>&prof; &dr; &hab; &inz;</tytul>
+     </szef>
+   </instytut>
+    <kierunek>
+      <nazwa>Automatyka i robotyka</nazwa>
+      <kurs><nazwa>Podstawy konstrukcji maszyn </nazwa>
+        <opis/>
+        <forma>wykład</forma>
+        <forma>projekt</forma>
+     </kurs>
+   </kierunek>
+ </wydzial>
+
+  <!-- pozostałe wydziały oraz katedry, jak również biblioteka -->
+
+</uczelnia>

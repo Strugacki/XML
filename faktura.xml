@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<faktura>
+	<produkty>
+	<produkt>
+		<nazwa>Zegarek</nazwa>
+		<kod>5324663162</kod>
+		<cena waluta="euro">57.54</cena>
+		<ilosc>20</ilosc>
+	</produkt>
+	<produkt>
+		<nazwa>Buty</nazwa>
+		<kod>1421345</kod>
+		<cena waluta="zl">240.45</cena>
+		<ilosc>13</ilosc>
+	</produkt>
+	
+	<produkt>
+		<nazwa>Parasol</nazwa>
+		<kod>98585647</kod>
+		<cena waluta="dolar">13.00</cena>
+		<ilosc>57</ilosc>
+	</produkt>
+</produkty>
+
+	<sklep>
+			<nazwa>MIREKPOL</nazwa>
+			<adres>
+				<miasto>Czarna Woda</miasto>
+				<ulica>Okrezna</ulica>
+			    <kodp>83-262</kodp>
+			</adres>
+			<telefon>508555444</telefon>
+			<nip>1356823-67</nip>
+	</sklep>
+
+</faktura>

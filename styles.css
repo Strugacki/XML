@@ -1,0 +1,19 @@
+listaStudentow{
+margin: 30px;
+width: 1000px;
+height: 180px;
+}
+
+grupa{
+float: left;
+margin: 10px;
+border: 1px solid black;
+padding: 5px;
+width: 280px;
+height:140px;
+display: block;
+}
+
+student{
+display: block;
+}

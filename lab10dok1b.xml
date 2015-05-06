@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="lab10.xsl"?>
+<zwierzaki>
+	<zwierze wiek="7">
+		<gatunek>kot</gatunek>
+		<imie>Filemon</imie>
+		<plec>m</plec>
+	</zwierze>
+	<zwierze wiek="10">
+		<gatunek>pies</gatunek>
+		<imie>Reks</imie>
+		<plec>m</plec>
+	</zwierze>
+	<zwierze wiek="2">
+		<gatunek>kot</gatunek>
+		<imie>Uszata</imie>
+		<plec>k</plec>
+	</zwierze>
+	<zwierze wiek="3">
+		<gatunek>pies</gatunek>
+		<imie>Kika</imie>
+		<plec>k</plec>
+	</zwierze>
+	<zwierze wiek="8">
+		<gatunek>pies</gatunek>
+		<imie>Azor</imie>
+		<plec>m</plec>
+	</zwierze>
+</zwierzaki>

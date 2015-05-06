@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT ksiazka (kontakt*,grupa+)>
+<!ENTITY dr "doktor">
+<!ELEMENT kontakt (dane_personalne,adres+,dane_kontaktowe)>
+<!ATTLIST kontakt plec (m|k) #REQUIRED
+				  id_grupa IDREF #REQUIRED>
+<!ELEMENT dane_personalne (tytul?,imie,nazwisko)>
+<!ELEMENT tytul (#PCDATA)>
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT dane_kontaktowe (tel,email,gg?)>
+<!ELEMENT tel (#PCDATA)>
+
+
+
+
+<!ELEMENT adres (kod_pocztowy,miejscowosc,ulica,nr_budynku,nr_lokalu?)>
+<!ATTLIST adres xmlns CDATA #IMPLIED>
+<!ELEMENT kod_pocztowy (#PCDATA)>
+<!ELEMENT miejscowosc (#PCDATA)>
+<!ELEMENT ulica (#PCDATA)>
+<!ELEMENT nr_budynku (#PCDATA)>
+<!ELEMENT nr_lokalu (#PCDATA)>
+
+<!ELEMENT gg (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST email domena NMTOKENS #IMPLIED>
+
+
+
+<!ELEMENT grupa (#PCDATA)>
+<!ATTLIST grupa  id ID #REQUIRED>
+

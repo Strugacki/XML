@@ -1,0 +1,88 @@
+listaStudentow {
+	border: 2px dotted #18148F;
+	margin: auto;
+	margin-top: 60px;
+	width: 590px;
+	height: 360px;
+	background: #54DDA4;
+	padding-top:15px;
+}
+
+
+grupa{
+	margin: auto;
+}
+
+
+grupa[nr="1"]{
+	border: 1px solid #18148F;
+	display: table;
+	background: #6AB9D4;
+	float:left;
+	margin: 5px 5px 12px 15px;
+}
+
+grupa[nr="2"]{
+	border: 1px solid #18148F;
+	display: table;
+	background: #6AB9D4;
+	margin: 5px 5px 5px 0px;
+	float: left
+}
+
+grupa[nr="3"]{
+	border: 1px solid #18148F;
+	display: table;
+	background: #6AB9D4;
+	margin: 5px 5px 5px 0px;
+	float: left ;
+}
+
+student {
+	border: 1px solid #18148F;
+	display: block;
+	margin: 5px 5px 5px 5px;
+	background-color: #689985;
+}
+
+nazwisko, imie{
+	border: none;
+	padding:1px;
+	margin: 3px, 3px 3px, 3px ;
+}
+
+nazwisko{
+	color:blue;
+	font-size:14px;
+}
+
+imie{
+	font-family: courier;
+	font-size:16px;
+}
+
+nrIndeksu:before { 
+	content: "indeks: "; 
+	font-family:courier;
+}
+
+nrIndeksu {
+	font-size:10px;
+	border: none;
+	display:block;
+	padding:4px;
+	margin: 4px;
+	font-family: courier;
+}
+
+grupa[nr="1"] student:hover{
+	background-color: gold;
+}
+
+grupa[nr="2"] student:hover{
+	background-color: pink;
+}
+
+grupa[nr="3"] student:hover{
+	background-color: #ED5353;
+}

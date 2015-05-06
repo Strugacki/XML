@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE pracownicy SYSTEM "lab3drugie.dtd">
+
+<pracownicy>
+
+<dzial-spozywczy>
+
+<pracownik plec="m" pesel="93213142543" >
+	<nazwisko>Nowak</nazwisko>
+	<imie>Michał</imie>
+	<data-zatr>10-01-2009</data-zatr>
+</pracownik>
+	
+<pracownik plec="k" pesel="132362543" status="dsadsafdsaf">
+	<nazwisko>Lipiec</nazwisko>
+	<imie>Anna</imie>
+	<data-zatr>04-12-2007</data-zatr>
+</pracownik>
+
+
+</dzial-spozywczy>
+
+<dzial-chemiczny>
+
+<pracownik plec="k" pesel="93213142543" status="dsadsa fdsaf">
+	<nazwisko>Malinowska</nazwisko>
+	<imie>Marta</imie>
+	<data-zatr>23-06-2005</data-zatr>
+</pracownik>
+
+</dzial-chemiczny>
+
+
+</pracownicy>

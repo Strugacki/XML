@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<sprzet>
+
+<monitor rola="rozrywka">
+	<informacje-podstawowe>
+		<marka>Asus</marka>
+		<model>ROG Swift</model>
+	</informacje-podstawowe>
+	
+	<parametry-fizyczne>
+		<typ-matrycy>TN</typ-matrycy>
+		<podswietlenie>W-LED</podswietlenie>
+		<rozdzielczosc>12560-1440</rozdzielczosc>
+		<przekatna>27</przekatna>
+		
+	</parametry-fizyczne>
+	
+	<zlacza>
+			<DisplayPort>1</DisplayPort>
+			<USB>3.0</USB>
+	</zlacza>
+		
+	<wydajnosc>
+		<czas-reakcji>1</czas-reakcji>
+		<jasnosc>350 cd-m2</jasnosc>
+		<kontrast>1000:1</kontrast>
+	</wydajnosc>
+</monitor>
+
+<monitor rola="rozrywka">
+	<informacje-podstawowe>
+		<marka>Eizo</marka>
+		<model>Foris</model>
+	</informacje-podstawowe>
+	
+	<parametry-fizyczne>
+		<typ-matrycy>IPS</typ-matrycy>
+		<podswietlenie>LED</podswietlenie>
+		<rozdzielczosc>1920x1080</rozdzielczosc>
+		<przekatna>23.8</przekatna>
+		
+	</parametry-fizyczne>
+	
+	<zlacza>
+			<HDMI>2</HDMI>
+			<DVI-D>1</DVI-D>
+			<USB>3.0</USB>
+	</zlacza>
+		
+	<wydajnosc>
+		<czas-reakcji>4.9</czas-reakcji>
+		<jasnosc>250 cd-m2</jasnosc>
+		<kontrast>1000:1</kontrast>
+	</wydajnosc>
+
+
+</monitor>
+
+</sprzet>

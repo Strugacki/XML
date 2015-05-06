@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:simpleType name="mojaWaluta">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="zl"/>
+<xsd:enumeration value="dolar"/>
+<xsd:enumeration value="euro"/>
+</xsd:restriction>
+</xsd:simpleType>
+
+		<xsd:complexType name="dane-kontaktowe">
+			<xsd:all>
+				<xsd:element name="nazwa" type="xsd:string"/>
+				<xsd:element name="adres" >
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ulica" type="xsd:string"/>
+								<xsd:element name="kod" type="xsd:string"/>
+								<xsd:element name="miasto" type="xsd:string"/>
+							</xsd:sequence>
+						</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="telefony">
+						<xsd:complexType>
+							<xsd:choice>
+								<xsd:element name="telefon-stac" type="xsd:string"/>
+								<xsd:element name="telefon-kom" type="xsd:string"/>
+							</xsd:choice>
+						</xsd:complexType>
+				</xsd:element>
+				
+			</xsd:all>
+		</xsd:complexType>
+
+
+
+<xsd:simpleType name="pocztowy">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[0-9][0-9]\-[0-9][0-9][0-9]"/>
+	</xsd:restriction>
+</xsd:simpleType>
+  
+<xsd:simpleType name="nip">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[0-9\-]{10}"/>
+	</xsd:restriction>
+</xsd:simpleType>
+  
+<xsd:simpleType name="mojCena">
+	<xsd:restriction base="xsd:double">
+		<xsd:pattern value="([0-9])*\.[0-9][0-9]"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+<xsd:simpleType name="kod">
+	<xsd:restriction base="xsd:string">
+		<xsd:whiteSpace value="collapse"/>
+		<xsd:minLength value="5"/>
+		<xsd:maxLength value="10"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+<xsd:simpleType name="telefon">
+	<xsd:restriction base="xsd:string">
+		<xsd:minLength value="9"/>
+		<xsd:maxLength value="9"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+<xsd:simpleType name="mojZakres">
+	<xsd:restriction base="xsd:integer">
+		<xsd:minInclusive value="0"/>
+	</xsd:restriction>
+</xsd:simpleType> 
+
+
+
+
+<xsd:complexType name="fakturaN">
+<xsd:sequence>
+	<xsd:element name="produkty">
+	<xsd:complexType>
+	<xsd:sequence>
+		<xsd:element name="produkt" minOccurs="1" maxOccurs="unbounded">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="nazwa" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="kod" type="kod" minOccurs="1" maxOccurs="1"/>
+
+				
+<xsd:element name="cena" >
+  <xsd:complexType>
+    <xsd:simpleContent>
+      <xsd:extension base="mojCena">
+        <xsd:attribute name="waluta" type="mojaWaluta" use="required">
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:element>
+
+
+
+<xsd:element name="ilosc" type="mojZakres" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>	
+	
+
+<xsd:element name="sklep">
+	<xsd:complexType>
+	<xsd:sequence>
+		<xsd:element name="nazwa" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<xsd:element name="adres" type="xsd:string" minOccurs="1" maxOccurs="2"/>
+		<xsd:element name="kodp" type="pocztowy" minOccurs="0" maxOccurs="2"/>		
+		<xsd:element name="telefon" type="telefon" minOccurs="1" maxOccurs="3"/>		
+		<xsd:element name="nip" type="nip" minOccurs="1" maxOccurs="1"/>
+	</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+	
+	
+	
+<xsd:element name="dostawca" type="dane-kontaktowe"/>	
+<xsd:element name="odbiorca" type="dane-kontaktowe"/>
+	
+	
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="paragoN">
+	<xsd:complexContent>
+	<xsd:restriction base="fakturaN">
+		<xsd:sequence>
+		<xsd:element name="produkty"/>
+		<xsd:element name="sklep"/>
+		<xsd:element name="dostawca" type="dane-kontaktowe" minOccurs="0" maxOccurs="0"/>	
+		<xsd:element name="odbiorca" type="dane-kontaktowe" minOccurs="0" maxOccurs="0"/>
+		</xsd:sequence>
+	</xsd:restriction>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="fakturaprO">
+	<xsd:complexContent>
+	<xsd:extension base="fakturaN">
+		<xsd:sequence>
+		<xsd:element name="witrynaSklepu" type="xsd:string" minOccurs="0" maxOccurs="1"/>	
+		</xsd:sequence>
+	</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:element name="main">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="faktura" type="fakturaN" maxOccurs="unbounded" />
+<xsd:element name="paragon" type="paragoN" maxOccurs="unbounded" />
+<xsd:element name="fakturaPRO" type="fakturaprO"  maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+
+</xsd:schema>

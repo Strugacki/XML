@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT biblioteka (ksiazka*, dziall:dzial+)>
+<!ATTLIST biblioteka
+ xmlns CDATA #IMPLIED
+ xmlns:dziall CDATA #IMPLIED>
+ 
+ 
+<!ENTITY f "fab">
+
+<!ELEMENT dzial (#PCDATA)>
+<!ATTLIST dzial
+kod ID #REQUIRED
+ksiazki IDREFS #IMPLIED>
+
+<!ELEMENT ksiazka (tytul, autor, opis)>
+<!ATTLIST ksiazka
+id ID #REQUIRED
+kod_dzialu IDREF #REQUIRED>
+
+<!ELEMENT tytul (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT opis (#PCDATA)>
